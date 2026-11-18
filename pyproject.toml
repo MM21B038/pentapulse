@@ -1,0 +1,18 @@
+[project]
+name = "pentapulse"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "django>=6.1.2",
+    "dotenv>=0.9.9",
+    "langchain-core>=1.6.10",
+    "langchain-google-genai>=4.4.2",
+    "langchain-mcp-adapters>=0.3.2",
+    "langchain-openai>=1.7.1",
+    "langchain-openrouter>=0.2.9",
+    "pymongo>=4.19.0",
+    "tiktoken>=0.14.0",
+    "typer>=0.27.3",
+]

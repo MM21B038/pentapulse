@@ -1,0 +1,22 @@
+services:
+  mongo:
+    image: mongo:7
+    container_name: penta_mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER:?Set MONGO_USER in .env}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD:?Set MONGO_PASSWORD in .env}
+    ports:
+      - "${MONGO_PORT:?Set MONGO_PORT in .env}:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - penta-net
+    restart: unless-stopped
+
+volumes:
+  mongo_data:
+    driver: local
+    
+networks:
+  penta-net:
+    driver: bridge
